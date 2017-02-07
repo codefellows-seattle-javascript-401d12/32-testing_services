@@ -1,7 +1,5 @@
 'use strict';
 
-require('./_upload-pic.scss');
-
 module.exports = {
   template: require('./upload-pic.html'),
   controller: ['$log', 'picService', UploadPicController],
@@ -22,6 +20,7 @@ function UploadPicController($log, picService) {
       this.pic.name = null;
       this.pic.desc = null;
       this.pic.file = null;
-    })
-  }
+      this.pic.gallery = this.gallery._id;
+    });
+  };
 }

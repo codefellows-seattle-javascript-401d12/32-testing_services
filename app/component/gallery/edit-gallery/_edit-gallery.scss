@@ -1,8 +1,11 @@
-@import "../../../scss/lib/theme/vars";
+@import "../scss/lib/theme/vars";
 
-.edit {
-  .item-label {
-    margin-bottom: 1vw;
-    display: block;
-  }
+
+.edit-gallery{
+  padding-bottom: $gutter-std;
+}
+
+.item-label{
+ margin-left: $gutter-std;
+ margin-right: $gutter-std / 2;
 }

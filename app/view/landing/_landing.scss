@@ -1,19 +1,16 @@
-@import "../../scss/lib/theme/vars";
+@import "../scss/lib/theme/vars";
 
-.join-inner {
-
-  div:last-child {
-    margin-top: 1.75vw;
-    text-align: right;
-    font-size: 2vw;
-
-    p {
-      display: inline;
-      margin-right: 1vw;
-    }
-
-    a {
-      margin-right: 1.5vw;
-    }
-  }
+.join-container{
+ p{
+  text-align:right;
+  width: $box-std * 2.1;
+  color: $color-d;
+  font-size: $padding-std * 2;
+ }
+ a{
+  text-decoration: none;
+  color: $brand-primary;
+  font-size: $padding-std * 2;
+  font-weight: bold;
+ }
 }

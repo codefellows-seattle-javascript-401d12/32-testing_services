@@ -22,4 +22,4 @@ function SignupController($log, $location, authService) {
       $location.url('/home');
     });
   };
-};
+}

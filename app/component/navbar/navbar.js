@@ -1,38 +1,34 @@
-'use strict';
-
-require('./_navbar.scss');
+'use atrict';
 
 module.exports = {
   template: require('./navbar.html'),
-  controller: ['$log', '$location', '$rootScope', 'authService', NavbarController],
+  controller: ['$log', '$location', '$rootScope', 'authService', navbarController],
   controllerAs: 'navbarCtrl'
 };
 
-function NavbarController($log, $location, $rootScope, authService) {
-  $log.debug('NavbarController');
+function navbarController($log, $location, $rootScope, authService) {
+  $log.debug('navbarController');
 
-  this.checkPath = function() {
+  this.checkPath = function(){
     let path = $location.path();
-    if (path === '/join') {
+    if (path == '/join'){
       this.hideButtons = true;
-    };
+    }
 
-    if (path !== '/join') {
+    if( path !== '/join'){
       this.hideButtons = false;
       authService.getToken()
       .catch( () => {
         $location.url('/join#login');
       });
-    };
+    }
   };
-
   this.checkPath();
-
   $rootScope.$on('$locationChangeSuccess', () => {
     this.checkPath();
   });
 
-  this.logout = function() {
+  this.logout = function(){
     $log.log('navbarCtrl.logout()');
     this.hideButtons = true;
     authService.logout()
@@ -40,5 +36,4 @@ function NavbarController($log, $location, $rootScope, authService) {
       $location.url('/');
     });
   };
-};
-
+}

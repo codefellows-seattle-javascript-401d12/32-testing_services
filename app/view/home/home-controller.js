@@ -9,11 +9,10 @@ function HomeController($log, $rootScope, galleryService) {
 
   this.galleries = [];
 
-  this.fetchGalleries = function() {
+  this.fetchGalleries = function(){
     galleryService.fetchGalleries()
     .then( galleries => {
       this.galleries = galleries;
-      this.currentGallery = galleries[0];
     });
   };
 
@@ -21,11 +20,11 @@ function HomeController($log, $rootScope, galleryService) {
     if (this.currentGallery._id === gallery._id) {
       this.currentGallery = null;
     }
-  }
+  };
 
   this.fetchGalleries();
 
   $rootScope.$on('$locationChangeSuccess', () => {
     this.fetchGalleries();
   });
-};
+}

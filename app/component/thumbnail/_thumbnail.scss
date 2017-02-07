@@ -1,0 +1,25 @@
+@import "../scss/lib/theme/vars";
+
+
+.thumbnail {
+  margin: $gutter-std / 3;
+  width: 10vh;
+  position: relative;
+  display: inline-block;
+
+  img {
+    width: 10vh;
+    height: 10vh;
+    margin-bottom: $gutter-std / 2;
+    margin-left: $gutter-std;
+  }
+
+  span {
+    @extend button;
+    width: 8vh;
+    position: absolute;
+    top: 10vh;
+    left: .5vh;
+    text-align: center;
+  }
+}

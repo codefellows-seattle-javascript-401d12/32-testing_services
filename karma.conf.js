@@ -1,7 +1,3 @@
-
-// Karma configuration
-// Generated on Wed Oct 19 2016 09:49:07 GMT-0700 (PDT)
-
 const webpack= require('./webpack.config.js');
 webpack.entry = {};
 
@@ -15,7 +11,7 @@ module.exports = function(config) {
     singleRun: false,
     concurrency: Infinity,
     frameworks: ['jasmine'],
-    reporters: ['mocha'],
+    reporters: ['mocha'],    
     browsers: ['PhantomJS'],
     logLevel: config.LOG_INFO,
     preprocessors: {

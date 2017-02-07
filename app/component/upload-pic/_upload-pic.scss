@@ -1,5 +1,4 @@
-@import "../../../scss/lib/theme/vars";
-
+@import "../scss/lib/theme/vars";
 .upload-pic {
   h3 {
     font-size: 2.5vw;
@@ -11,7 +10,7 @@
     margin-top: 0;
 
     input {
-      margin-bottom: $gutter-sm;
+      margin-bottom: $gutter-std;
     }
   }
 
@@ -21,9 +20,13 @@
     .grab-img {
       float: left;
       margin-top: 1vw;
-      margin-right: $gutter-sm;
+      margin-right: $gutter-std;
       font-size: 2.5vw;
       text-decoration: underline;
+    }
+
+    button{
+     width: 30%;
     }
   }
 }

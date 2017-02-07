@@ -1,8 +1,13 @@
-@import "../../../scss/lib/theme/vars";
+@import "../scss/lib/theme/vars";
+
 
 .thumbnail-container {
   margin-top: 7.5%;
-
+  width: 80%;
+  margin-left: 10%;
+  div{
+    margin-top: 6vh;
+  }
   h3 {
     height: 5vw;
     text-transform: capitalize;

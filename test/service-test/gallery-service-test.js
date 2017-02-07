@@ -42,14 +42,19 @@ describe('Gallery Service', function() {
     });
   });
   describe('galleryService.fetchGalleries()', () =>{
-    let headers = {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-      Authorization: 'Bearer test token'
-    };
+   it('checking galleries recieved is array', () =>{
+      let headers = {
+        'Accept': 'application/json',
+        Authorization: 'Bearer test token'
+       };
+
     this.$httpBackend.expectGET('http://localhost:8000/api/gallery', headers)
-    .respond(200);
-    this.galleryService.galleries(galleries);
+    .respond(200, this.galleryService.galleries);
+
+     this.galleryService.fetchGalleries();
+     this.$httpBackend.flush();
+     this.$rootScope.$apply();
+   });
   })
   describe('galleryService.deleteGallery()', () => {
     it('should delete a gallery', () => {

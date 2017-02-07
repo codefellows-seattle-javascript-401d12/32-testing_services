@@ -1,11 +1,13 @@
 <section class="signup">
+
   <form class="signup-form"
     ng-submit="signupCtrl.signup(signupCtrl.user)"
     no-validate>
 
+      <li>signup.</li>
       <input class="input-std"
         type="text"
-        placeholder="name"
+        placeholder="username"
         ng-minlength="4"
         ng-model="signupCtrl.user.username" required>
 
@@ -20,6 +22,6 @@
         ng-minlength="3"
         ng-model="signupCtrl.user.password" required>
 
-      <input type="submit" class="btn-std" value="sign up">
+      <button type="submit" class="btn-std">sign up</button>
   </form>
 </section>

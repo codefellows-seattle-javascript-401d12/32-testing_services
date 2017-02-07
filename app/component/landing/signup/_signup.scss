@@ -1,13 +1,14 @@
-@import "../../../scss/lib/theme/vars";
+@import "../scss/lib/theme/vars";
 
-.signup {
-  .input-std {
-    margin-bottom: $gutter-sm;
-  }
+.signup{
+ input[class='btn-std']{
+  @extend button;
+ }
+}
 
-  button {
-    float: right;
-    padding-top: 1.5vw;
-    padding-bottom: 1.5vw;
-  }
+.btn-std{
+ width: $box-std;
+ margin-right: $gutter-std * 2.8;
+ background-color: $brand-primary;
+ float: right;
 }

@@ -1,74 +1,44 @@
-html, body {
-  width: 100%;
+@import "../theme/vars";
+html {
   height: 100%;
-  font-family: $font-std;
-  background: $brand-primary * 3;
-  color: $btn-primary;
-}
-
-a {
-  text-decoration: none;
-  color: $black;
-  font-weight: 700;
-}
-
-h1 {
-  font-size: 5vw;
-  margin-bottom: $gutter-sm;
-}
-
-h2 {
-  font-size: 4vw;
-  margin: $gutter-sm / 2 0;
-}
-
-h3 {
-  font-size: 3vw;
-  margin-bottom: $gutter-sm;
-}
-
-button {
-  padding: 1% 5%;
-  background: $btn-primary;
-  color: $white;
-  font-size: 2vw;
-  border: none;
-  border-radius: $btn-radius;
-  cursor: pointer;
-  transition: 350ms all;
-}
-
-.btn-std {
-  @extend button;
-}
-
-input[type="text"] {
   width: 100%;
-  padding: 1.5vw 2vw;
-  font-size: 2vw;
-  border: solid 1px $brand-primary;
-  border-radius: $btn-radius;
-  box-sizing: border-box;
+}
 
-  &:focus {
-    background: $brand-primary;
-    color: $white;
+body {
+ height: 100%;
+ width: 80%;
+ margin-left: 10%;
+ font-family: sans-serif;
+}
+
+
+form{
+  width: $box-std * 2;
+  padding: $gutter-std;
+  margin-left: $gutter-std * 2;
+  margin-bottom: $gutter-std / 2;
+  li{
+   list-style: none;
+   color: $color-d;
+   font-size: $padding-std * 2;
+   margin-left: $gutter-std / 2;
   }
 }
 
-input[type="password"] {
-  @extend input[type="text"];
+input{
+ font-size: $padding-std * 1.5;
+ display: block;
+ margin: $gutter-std / 2;
+ padding: $padding-std;
+ width: $box-std * 2;
+ border: none;
+ border-radius: $padding-std / 2;
 }
-
-input[disabled="disabled"] {
-  background: $disabled;
-}
-
-.input-std {
-  @extend input[type="text"];
-  display: inline-block;
-}
-
-fieldset {
-  margin: 2% 0;
+button{
+ border-radius: $padding-std / 1.5;
+ border: none;
+ padding: $padding-std;
+ font-size: $padding-std * 2;
+ color: $color-l;
+ cursor: pointer;
 }
