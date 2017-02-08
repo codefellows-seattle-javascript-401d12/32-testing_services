@@ -70,9 +70,9 @@ function galleryService($q, $log, $http, authService){
       let url = `${baseUrl}/${galleryID}`;
 
       config.headers = {
+        Authorization: `Bearer ${token}`,
         Accept:'application/json, text/plain, */*',
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`
       };
 
       return $http.put(url, galleryData, config);

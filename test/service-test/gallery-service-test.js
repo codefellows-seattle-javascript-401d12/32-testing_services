@@ -42,32 +42,35 @@ describe('Gallery Service', function() {
     });
   });
   describe('galleryService.fetchGalleries()', () =>{
-   it('checking galleries recieved is array', () =>{
+    it('checking galleries recieved is array', () =>{
       let headers = {
         'Accept': 'application/json',
         Authorization: 'Bearer test token'
-       };
+      };
 
-    this.$httpBackend.expectGET('http://localhost:8000/api/gallery', headers)
+      this.$httpBackend.expectGET('http://localhost:8000/api/gallery', headers)
     .respond(200, this.galleryService.galleries);
 
-     this.galleryService.fetchGalleries();
-     this.$httpBackend.flush();
-     this.$rootScope.$apply();
-   });
-  })
+      this.galleryService.fetchGalleries()
+      .then( gallery => {
+        expect(Array.isArray(gallery)).toBe(true);
+      });
+      this.$httpBackend.flush();
+      this.$rootScope.$apply();
+    });
+  });
   describe('galleryService.deleteGallery()', () => {
     it('should delete a gallery', () => {
       let galleryID = 'testid';
       let headers = {
         Authorization: 'Bearer test token',
-        Accept: "application/json, text/plain, */*",
+        Accept: 'application/json, text/plain, */*',
       };
 
       this.$httpBackend.expectDELETE('http://localhost:8000/api/gallery/testid', headers).respond(204);
       this.galleryService.deleteGallery(galleryID);
       this.$httpBackend.flush();
       this.$rootScope.$apply();
-    })
+    });
   });
 });
